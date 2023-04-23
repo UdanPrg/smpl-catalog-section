@@ -1,8 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import Image from "next/image"
 import styles from './product.module.css'
 
-export default function Product({id, title, description, price, image, cant }){
+export default function Product({id, title, description, price, image }){
+    const [countProducts, setCountProducts] = useState(0);
+    const [sndCantidad, setSndCantidad] = useState([]);
     return(
         <div className={`transition duration-500 ease-in-out hover:shadow-xl ${styles.productContainer}`} key={id}>
             <Image
@@ -10,20 +12,24 @@ export default function Product({id, title, description, price, image, cant }){
                 alt="Picture of the author"
                 width={500}
                 height={500}
-                className="mx-auto w-1/2"
+                className="mx-auto w-2/3 h-80 object-contain border-2 border-slate-100 p-3"
             />
-            <h4 className="text-xl font-semibold my-4">{title}</h4>
-            <div className="container-price">
-                <b>{price}</b>
+            <h4 className="text-xl font-semibold my-4 h-16 flex items-center">{title}</h4>
+            <div className="container-price grid grid-cols-3 gap-1">
+                <b>USD$ {price}</b>
                 <input
-                    value={cant}
-                    // onChange={e => setAge(e.target.value)}
+                    value={countProducts}
+                    onChange={e => setCountProducts(e.target.value)}
                     type="number"
+                    className="border-2 border-zinc-500 pl-2 rounded-md"
                 />
             </div>
-            <p className="text-sm my-4">{description}</p>
-            <small>button</small>
-            <small>Link</small>
+            <p className="text-sm my-4 text-justify line-clamp-3">{description}</p>
+            <button
+                onClick={(cant, product) =>{}}
+                className="block w-1/3 px-4 py-2 bg-red-950 rounded-md border-2 border-slate-950 text-white mx-auto transition-all duration-300 hover:bg-white hover:text-black"
+            >Add To Cart</button>
+            <a href="#" className="block text-center my-3 hover:text-red-800 text-sm">Learn More</a>
         </div>
     )
 }
