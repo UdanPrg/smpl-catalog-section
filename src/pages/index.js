@@ -26,7 +26,7 @@ export default function Home({ products }) {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <section className='py-5'>
-        <Range currentSize={textSize} funChangeSize={reSize => setTextSize(reSize.target.value)}/>
+        <Range currentSize={textSize} funChangeSize={reSize => setTextSize(reSize.target.value)} label={"Product Title size is"}/>
 
       </section>
         <SectionProducts 

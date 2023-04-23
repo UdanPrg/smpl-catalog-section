@@ -1,8 +1,4 @@
-import React, {useState} from "react";
-
-export default function Range({ currentSize, funChangeSize }){
-    // const [textSize, setTextSize] = useState(14)
-    // console.log(textSize)
+export default function Range({ currentSize, funChangeSize, label }){
     return (
         <div>
             <input
@@ -14,9 +10,7 @@ export default function Range({ currentSize, funChangeSize }){
                 onChange={funChangeSize}
                 htmlFor="sizeRange"
             />
-            <label htmlFor="sizeRange"> Text Size: {currentSize} </label>
-            {/* <h4 style={{ fontSize: `${textSize}px` }}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni laborum soluta expedita hic veniam? Corporis, explicabo incidunt eum quasi nemo eveniet impedit blanditiis ab beatae quo pariatur ratione error ad.</h4> */}
+            <label htmlFor="sizeRange"> {label}: {currentSize}px </label>
         </div>
-
     )
 }
