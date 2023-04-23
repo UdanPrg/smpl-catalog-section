@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import Image from "next/image"
 import styles from './product.module.css'
 
-export default function Product({id, title, description, price, image }){
+export default function Product({id, title, description, price, image, sizeTitle }){
     const [countProducts, setCountProducts] = useState(0);
     const [sndCantidad, setSndCantidad] = useState([]);
     return(
@@ -14,7 +14,7 @@ export default function Product({id, title, description, price, image }){
                 height={500}
                 className="mx-auto w-2/3 h-80 object-contain border-2 border-slate-100 p-3"
             />
-            <h4 className="text-xl font-semibold my-4 h-16 flex items-center">{title}</h4>
+            <h4 style={{ fontSize: `${sizeTitle}px` }} className="line-clamp-1 font-semibold my-4 h-16 flex items-stretch">{title}</h4>
             <div className="container-price grid grid-cols-3 gap-1">
                 <b>USD$ {price}</b>
                 <input
