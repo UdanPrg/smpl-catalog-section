@@ -13,12 +13,12 @@ export default function Cart() {
         <div>
             <h1>Cart</h1>
             {/* Renderiza la tabla con la información del carrito */}
-            <table>
+            <table className="table-auto">
                 <thead>
                     <tr>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th>Total</th>
+                        <th className="border border-slate-800 px-4 py-1">Product</th>
+                        <th className="border border-slate-800 px-4 py-1">Quantity</th>
+                        <th className="border border-slate-800 px-4 py-1">Total</th>
                     </tr>
                 </thead>
                 <tbody>
