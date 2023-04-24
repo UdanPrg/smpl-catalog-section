@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Inter } from 'next/font/google'
 import { getDataAPI } from './api/hello'
@@ -7,6 +7,9 @@ import { getDataAPI } from './api/hello'
 import Product from '@/components/product_card'
 import SectionProducts from '@/components/section_products';
 import Range from '@/components/rangeSize';
+import Cart from '@/components/cart';
+import { CartContext } from '@/components/cartContext';
+// export const CartContext = createContext();
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,6 +24,7 @@ export async function getStaticProps(){
 
 export default function Home({ products }) {
   const [textSize, setTextSize] = useState(20)
+  const [cart, setCart] = useState([])
 
   // console.log('res... ' + products);
   return (
@@ -29,6 +33,7 @@ export default function Home({ products }) {
         <Range currentSize={textSize} funChangeSize={reSize => setTextSize(reSize.target.value)} label={"Product Title size is"}/>
 
       </section>
+      <CartContext.Provider value={[cart, setCart]}>
         <SectionProducts 
           child={ 
             products.map((product) =>(
@@ -36,6 +41,10 @@ export default function Home({ products }) {
               ))
             }
         />
+        <section className='my-5'>
+        <Cart />
+        </section>  
+        </CartContext.Provider>
     </main>
   )
 }
