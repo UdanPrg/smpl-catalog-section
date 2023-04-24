@@ -58,6 +58,7 @@ export default function Product({id, title, description, price, image, sizeTitle
                         onChange={e => setCountProducts(parseInt(e.target.value))}
                         type="number"
                         className="border-2 border-zinc-500 pl-2 rounded-md w-1/2 xl:w-3/4"
+                        min={0}
                     />
                 </div>
                 <p className="text-sm my-4 text-justify line-clamp-3">{description}</p>
