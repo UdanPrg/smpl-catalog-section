@@ -1,6 +1,7 @@
 export default function Range({ currentSize, funChangeSize, label }){
     return (
-        <div>
+        <div className="flex flex-col justify-center">
+            <label htmlFor="sizeRange" className="font-bold text-xl"> {label}: {currentSize}px </label>
             <input
                 type="range"
                 value={currentSize}
@@ -10,7 +11,6 @@ export default function Range({ currentSize, funChangeSize, label }){
                 onChange={funChangeSize}
                 htmlFor="sizeRange"
             />
-            <label htmlFor="sizeRange"> {label}: {currentSize}px </label>
         </div>
     )
 }

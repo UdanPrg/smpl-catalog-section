@@ -29,11 +29,10 @@ export default function Home({ products }) {
   // console.log('res... ' + products);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-5 md:p-16 xl:p-24">
-      <section className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 py-5'>
+      <h1 className="text-center text-4xl font-bold mb-10"> Shopping Section</h1>
+      <section className='grid grid-cols-1 md:grid-cols-2 gap-4 py-5 w-full'>
         <Range currentSize={textSize} funChangeSize={reSize => setTextSize(reSize.target.value)} label={"Product Title size is"}/>
-        <CartContext.Provider value={[cart, setCart]}>
-          <Cart />
-        </CartContext.Provider>
+        
       </section>
       <CartContext.Provider value={[cart, setCart]}>
         <SectionProducts 
@@ -43,6 +42,10 @@ export default function Home({ products }) {
               ))
             }
         />
+        </CartContext.Provider>
+        
+        <CartContext.Provider value={[cart, setCart]}>
+          <Cart />
         </CartContext.Provider>
     </main>
   )
