@@ -8,6 +8,7 @@ import Product from '@/components/product_card'
 import SectionProducts from '@/components/section_products';
 import Range from '@/components/rangeSize';
 import Cart from '@/components/cart';
+import Sidebar from '@/components/sidebar';
 import { CartContext } from '@/components/cartContext';
 // export const CartContext = createContext();
 
@@ -32,7 +33,9 @@ export default function Home({ products }) {
       <h1 className="text-center text-4xl font-bold mb-10"> Shopping Section</h1>
       <section className='grid grid-cols-1 md:grid-cols-2 gap-4 py-5 w-full'>
         <Range currentSize={textSize} funChangeSize={reSize => setTextSize(reSize.target.value)} label={"Product Title size is"}/>
-        
+        <CartContext.Provider value={[cart, setCart]}>
+          <Cart />
+        </CartContext.Provider>
       </section>
       <CartContext.Provider value={[cart, setCart]}>
         <SectionProducts 
@@ -42,10 +45,6 @@ export default function Home({ products }) {
               ))
             }
         />
-        </CartContext.Provider>
-        
-        <CartContext.Provider value={[cart, setCart]}>
-          <Cart />
         </CartContext.Provider>
     </main>
   )
