@@ -5,7 +5,7 @@ export default function Range({ currentSize, funChangeSize, label }) {
     const [active, setActive] = useState(true);
 
     return (
-        <div className={`fixed h-40 w-3/4 md:w-2/3 xl:w-1/3 transition-all duration-500 ${active ? '-right-3/4 md:-right-2/3 xl:-right-1/3 ' : 'right-0'} top-0 bg-gray-100 border border-gray-300`}>
+        <div className={`fixed h-40 w-3/4 md:w-1/3  transition-all duration-500 ${active ? '-right-3/4 md:-right-1/3' : 'right-0'} -top-px bg-gray-100 border border-gray-300`}>
             <div className="relative w-full h-full ">
                 <Cog6ToothIcon
                     onClick={() => setActive(!active)}
