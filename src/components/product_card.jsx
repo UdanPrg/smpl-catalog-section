@@ -67,7 +67,7 @@ export default function Product({id, title, description, price, image, sizeTitle
                     onClick={funAddToCart}
                     className="block w-1/2 lg:w-1/3 xl:w-1/2 px-4 py-2 bg-red-950 rounded-md border-2 border-slate-950 text-white mx-auto transition-all duration-300 hover:bg-white hover:text-black"
                 >Add To Cart</button>
-                <a href="#" className="block text-center my-3 hover:text-red-800 text-sm">Learn More</a>
+                <a href="https://react.dev/" target="_blank" className="block text-center my-3 hover:text-red-800 text-sm">Learn More</a>
             </div>
 
         </div>
