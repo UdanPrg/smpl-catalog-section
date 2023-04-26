@@ -18,6 +18,7 @@ export default function Product({id, title, description, price, image, sizeTitle
             id: id,
             title: textTitle,
             price: price,
+            image: image,
             quantity: countProducts
         };
         
