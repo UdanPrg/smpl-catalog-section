@@ -7,6 +7,7 @@ import Image from "next/image";
 export default function Cart() {
     const [cart, useCart] = useContext(CartContext)
     const [active, setActive] = useState(true);
+    // console.log(cart.length)
 
     return (
 
@@ -17,8 +18,9 @@ export default function Cart() {
                     className={`absolute top-1/2 ${active ? '-left-16 bg-red-950' : '-left-10 bg-red-900'} stroke-2 stroke-white transition-all duration-500  rounded-full w-14 h-14 p-3 border border-slate-800 cursor-pointer`}
                 />
                 <div className="m-3">
-                    <h1 className="text-2xl text-center my-8 font-semibold">Cart</h1>
+                    <h1 className="text-2xl text-center my-8 font-semibold underline">Cart</h1>
                     <div className="overflow-y-auto">
+                        <span className={`${cart.length != 0 ? 'hidden':'block'} pl-3 text-base`}>You have not added products to the cart yet...</span>
                         <table className="table-auto w-full border-separate">
                             <tbody>
                                 {cart.map((item) => (
