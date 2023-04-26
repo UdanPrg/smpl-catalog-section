@@ -28,8 +28,8 @@ export default function Home({ products }) {
 
   // console.log('res... ' + products);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-5 md:p-16 xl:p-24">
-      <h1 className="text-center text-4xl font-bold mb-10"> Shopping Section</h1>
+    <main className="flex min-h-screen flex-col items-center justify-between py-12 p-5 md:p-16 xl:p-24">
+      <h1 className="text-center text-4xl font-bold mt-10 sm:mt-0 mb-10"> Shopping Section</h1>
       <section className='grid grid-cols-1 md:grid-cols-3 gap-4 py-5 w-full'>
         <Range currentSize={textSize} funChangeSize={reSize => setTextSize(reSize.target.value)} label={"Size is:"}/>
       </section>

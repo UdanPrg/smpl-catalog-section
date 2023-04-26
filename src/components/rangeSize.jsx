@@ -9,11 +9,11 @@ export default function Range({ currentSize, funChangeSize, label }) {
             <div className="relative w-full h-full ">
                 <Cog6ToothIcon
                     onClick={() => setActive(!active)}
-                    className={`absolute ${active ? ' top-6 right-full mr-1 bg-gray-50 stroke-gray-800' : 'top-2 right-2 mr-0 bg-gray-800 stroke-gray-50'} stroke-2 transition-all duration-500  rounded-full w-14 h-14 p-3 border border-slate-800 cursor-pointer`}
+                    className={`absolute ${active ? ' top-2 right-full mr-2 bg-gray-50 stroke-gray-800' : 'top-2 right-2 mr-0 bg-gray-800 stroke-gray-50'} stroke-2 transition-all duration-500 rounded-full w-12 h-12 p-3 border border-slate-800 cursor-pointer`}
                 />
 
-                <div className="w-full h-full p-3 lg:pr-40 lg:pl-10 flex flex-col justify-center">
-                    <label htmlFor="sizeRange" className="font-bold text-md"> Change the size of product titles </label>
+                <div className="w-full h-full p-4 lg:pr-24 lg:pl-10 flex flex-col justify-center">
+                    <label htmlFor="sizeRange" className="font-bold text-sm"> Size of product titles </label>
                     <input
                         type="range"
                         value={currentSize}
